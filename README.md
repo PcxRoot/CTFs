@@ -23,4 +23,4 @@ El contenido está organizado por plataformas para facilitar la navegación:
 Nmap | Burp Suite | Metasploit | GDB | Python | Wireshark | John the Ripper
 
 >[!IMPORTANT]
->Aviso Ético: Todo el contenido aquí compartido tiene fines estrictamente educativos y de hacking ético. No promuevo el uso de estas técnicas en sistemas sin autorización previa.
+>__Aviso Ético:__ Todo el contenido aquí compartido tiene fines estrictamente educativos y de hacking ético. No promuevo el uso de estas técnicas en sistemas sin autorización previa.
