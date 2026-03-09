@@ -28,7 +28,7 @@ Los puertos `22, 80 y 443` se encuentran abiertos. Cuando tratamos de conectarno
 
 ```bash
 sudo vim /etc/hosts
-10.112.145.42    futurevera.htm
+$IP    futurevera.thm
 ```
 
 Tras esto, nuestro sistema ya podrá resolver el nombre de dominio `futurevera.thm` y no tendremos que estar usando la dirección IP.
