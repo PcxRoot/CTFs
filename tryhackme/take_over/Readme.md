@@ -251,9 +251,9 @@ ffuf -u https://futurevera.thm -H "Host: FUZZ.futurevera.thm"
 
 Provocó que todas las peticiones devolvieran un código `200`. Esto se debe a que `ffuf` establecía el SNI para el dominio principal, pero luego intentaba cambiar el subdominio solo en la cabecera HTTP.
 
-**Soluciones aplicadas:**
+**Posibles soluciones:**
 
-- __Fuzzing en la URL:__ Al usar `https://FUZZ.futurevera.thm`, forzamos a la herramienta a realizar un apretón de manos TLS nuevo y correcto para cada subdominio (requiere resolución DNS previa en `/etc/hosts`). pero como no sabemos si ese subdominio existe realmente no es efectivo. 
+- __Fuzzing en la URL:__ Al usar `https://FUZZ.futurevera.thm`, forzamos a la herramienta a realizar un apretón de manos TLS nuevo y correcto para cada subdominio (requiere resolución DNS previa en `/etc/hosts`). Pero como no sabemos si ese subdominio existe realmente no es efectivo. 
 
 - __Uso de Flags de SNI:__ Utilizar herramientas o parámetros que permitan sincronizar el valor del SNI con el valor de la cabecera `Host` en cada intento.
 
