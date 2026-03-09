@@ -249,7 +249,7 @@ Durante este CTF, el uso de comandos estándar de `ffuf` como:
 ffuf -u https://futurevera.thm -H "Host: FUZZ.futurevera.thm"
 ```
 
-Provocó que todas las peticiones devolvieran un código `421`. Esto se debe a que `ffuf` establecía el SNI para el dominio principal, pero luego intentaba cambiar el subdominio solo en la cabecera HTTP.
+Provocó que todas las peticiones devolvieran un código `200`. Esto se debe a que `ffuf` establecía el SNI para el dominio principal, pero luego intentaba cambiar el subdominio solo en la cabecera HTTP.
 
 **Soluciones aplicadas:**
 
