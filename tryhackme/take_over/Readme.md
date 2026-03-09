@@ -115,7 +115,7 @@ Este comportamiento, sumado a que ambos subdominios HTTP encontrados nos muestra
 >[!tip]
 >En la configuración __Catch-all__ o __Wildcard__ el servidor está configurado para decir: "_No importa qué subdominio me pidan, les voy a responder siempre con mi página genérica_".
 >
->Para más información: <font color=red>ENLACE</font>
+>Para más información: [Explicación](#Catch\-all-o-Wildcard)
 
 Teniendo esto en cuenta, no podemos realizar un _fuzzing_ web tradicional. Mirando la descripción del CTF vemos que se nos hace referencia a que la organización crea blogs y también tiene un área de soporte.
 
@@ -165,7 +165,7 @@ ffuf -c -w wordlists -u http://futurevera.thm -H "Host: FUZZ.futurevera.thm" -fc
 >- `-mc`: Muestra todos los códigos de estado (así si se devuelve un código de estado que `ffuf` filtra por defecto no tendremos problema)
 >- `-fc`: Filtra para que no muestre los códigos de estado 200.
 >
->Se nos muestra que existen dos subdominios con código de estado `421 (Misdirected Request)`. <font color=red>EXPLICACiÓN</font>
+>Se nos muestra que existen dos subdominios con código de estado `421 (Misdirected Request)`. [Explicación](#SNI-(Server-Name-Indication))
 
 Añadimos ambos subdominios al fichero `/etc/hosts` y al acceder a ellos si vemos un sitio web diferente al genérico.
 ## support.futurevera.thm
