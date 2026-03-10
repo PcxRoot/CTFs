@@ -172,7 +172,7 @@ Añadimos ambos subdominios al fichero `/etc/hosts` y al acceder a ellos si vemo
 
 Si vemos el certificado del subdominio `support.futurevera.thm` vemos que existe una sección denominada `Subject Alt Names` el cual nos muestra un subdominio más (`[hidden].support.futurevera.thm`) que también sen encuetra bajo el mismo certificado SSL que `support.futurevera.thm`.
 
-Si añadimos este subdominio a `/etc/hosts` y navegamos a él usando HTTPS, no se nos mostrará de nuevo la página genérica, pero si lo buscamos usando el protocolo HTTP se nos redirigirá a un sitio web que contiene la flag en el subdominio (por lo que podrmos verla tanto desde el navegador en la barra de direcciones URL o haciendo uso de `curl` con la flag `-I` en la sección __Location__).
+Si añadimos este subdominio a `/etc/hosts` y navegamos a él usando HTTPS, no se nos mostrará de nuevo la página genérica, pero si lo buscamos usando el protocolo HTTP se nos redirigirá a un sitio web que contiene la flag en el subdominio (por lo que podremos verla tanto desde el navegador en la barra de direcciones URL o haciendo uso de `curl` con la flag `-I` en la sección __Location__).
 ```HTTP
 curl -I [hidden].support.futurevera.thm
 
