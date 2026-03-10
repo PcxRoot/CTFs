@@ -165,7 +165,7 @@ ffuf -c -w wordlists -u http://futurevera.thm -H "Host: FUZZ.futurevera.thm" -fc
 >- `-mc`: Muestra todos los códigos de estado (así si se devuelve un código de estado que `ffuf` filtra por defecto no tendremos problema)
 >- `-fc`: Filtra para que no muestre los códigos de estado 200.
 >
->Se nos muestra que existen dos subdominios con código de estado `421 (Misdirected Request)`. [Explicación](#SNI-\(Server-Name-Indication\))
+>Se nos muestra que existen dos subdominios con código de estado `421 (Misdirected Request)`. [Explicación](#sni-server-name-indication)
 
 Añadimos ambos subdominios al fichero `/etc/hosts` y al acceder a ellos si vemos un sitio web diferente al genérico.
 ## support.futurevera.thm
