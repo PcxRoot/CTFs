@@ -1,5 +1,5 @@
 # 🚩 CTF Solutions & Write-ups
-Este repositorio centraliza mis resoluciones detalladas de desafíos Capture The Flag (CTF). Mi objetivo es documentar el proceso de explotación, las herramientas utilizadas y el razonamiento lógico detrás de cada vulnerabilidad encontrada.
+Este repositorio centraliza mis resoluciones detalladas de desafíos ***Capture The Flag (CTF)***. Mi objetivo es documentar el proceso de explotación, las herramientas utilizadas y el razonamiento lógico detrás de cada vulnerabilidad encontrada.
 
 ## 🛠️ ¿Qué encontrarás aquí?
 A diferencia de un simple "paso a paso", cada resolución incluye:
