@@ -13,6 +13,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | Sala/Máquina | Dificultad | Categoría | Write-up |
 | :--- | :--- | :--- | :--- |
 | __Take over__ | 🟢 Fácil | Web/Linux | [Ver guía](./take_over) |
+| __c0lddbox easy | 🟢 Fácil | Web/Linux | [Ver guía](./c0lddbox%20easy) |
 
 ## 🛠️ Metodología Utilizada
 
