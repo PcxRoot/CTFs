@@ -418,3 +418,15 @@ Siendo el usuario `robot` ya tenemos acceso a el fichero `/home/robot/key-2-f-3.
 >Es importante destacar que la posibilidad de usar `find` para detectar binarios con el ***bit SUID activo*** estuvo desde el primer momento en el que conseguimos acceso a la máquina. El hecho de que no se haya usado este método es que el principal objetivo de estos *CTFs* es el de aprender, por lo que tomar atajos nos habría quitado parte de diversión y aprendizaje.
 >
 >No obstante, en un escenario de auditoría real, la eficiencia operativa es un factor determinante. Identificar vectores críticos de escalada de privilegios inmediatamente después del compromiso inicial no solo optimiza los tiempos de la intrusión, sino que permite evaluar de forma ágil el alcance total del riesgo sobre la infraestructura del cliente.
+
+---
+---
+# <font color=green>[+]</font> Recomendaciones de Seguridad (Mitigación)
+
+1. **Gestión de Archivos Sensibles:** Eliminar o restringir el acceso a archivos como `robots.txt` que revelen la estructura de diccionarios o *flags(. El archivo `license.txt` no debería contener credenciales en base64.
+2. **Hardening de WordPress:**
+   - Desactivar el editor de archivos en el panel de administración (`DISALLOW_FILE_EDIT`).
+   - Implementar ***doble factor de autenticación (2FA)*** para el usuario administrador.
+   - Deshabilitar el archivo `xmlrpc.php` si no es estrictamente necesario.
+3. **Principio de Menor Privilegio:** Auditar los binarios con bit SUID. Binarios como `nmap` nunca deben tener este permiso activo para usuarios no privilegiados, ya que permiten la ejecución de comandos como root.
+4. **Política de Contraseñas:** Evitar la reutilización de credenciales entre servicios (WordPress y SSH) y asegurar que no existan hashes almacenados en texto claro o formatos débiles (MD5) en directorios de usuario.
