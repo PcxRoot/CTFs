@@ -14,6 +14,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | :--- | :--- | :--- | :--- |
 | __Take over__ | 🟢 Fácil | Web/Linux | [Ver guía](./take_over) |
 | __c0lddbox easy__ | 🟢 Fácil | Web/Linux | [Ver guía](./c0lddbox%20easy) |
+| __Mr Robit | 🟡 Intermedio | Web/Linux | [Ver guía](./Mr%20Robot) | 
 
 ## 🛠️ Metodología Utilizada
 
