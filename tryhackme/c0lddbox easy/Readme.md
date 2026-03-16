@@ -68,7 +68,8 @@ Si logras una ***LFI*** o **acceso al sistema de archivos**, nuestro objetivo pr
 - Las "Salt Keys" de autenticación.
     
 
-> [!tip] **Tip de CTF**
+> [!tip]
+> **Tip de CTF:**
 > A veces las credenciales de la base de datos son las mismas que las del usuario `root` o un usuario del sistema (SSH). **¡Pruébalas siempre!**
 
 Primero actualizamos la base de datos de `wpscan`:
