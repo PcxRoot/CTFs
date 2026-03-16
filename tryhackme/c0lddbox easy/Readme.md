@@ -66,11 +66,7 @@ Si logras una ***LFI*** o **acceso al sistema de archivos**, nuestro objetivo pr
 - Credenciales de la base de datos (DB_USER, DB_PASSWORD).
     
 - Las "Salt Keys" de autenticación.
-    
 
-> [!tip]
-> **Tip de CTF:**
-> A veces las credenciales de la base de datos son las mismas que las del usuario `root` o un usuario del sistema (SSH). **¡Pruébalas siempre!**
 
 Primero actualizamos la base de datos de `wpscan`:
 ```bash
@@ -227,7 +223,7 @@ Interesting Finding(s):
 [!] You can get a free API token with 25 daily requests by
 ```
 
-Con esta enumeración vemos la versión de WordPress (***4.1.31***), los uusarios y el archivo `xmlrpc.php` activo.
+Con esta enumeración vemos la versión de WordPress (***4.1.31***), los usuarios y el archivo `xmlrpc.php` activo.
 
 Ya que tenemos tres nombres de usuario, probaremos a hacer un ataque de fuerza bruta aprovechando el archivo `xmlrpc.php`. XML-RPC es mucho más rápido para hacer fuerza bruta que el formulario de login normal porque permite probar múltiples contrseñas en una sola petición.
 
@@ -239,6 +235,10 @@ wpsacn --url http://$IP --passwords /usr/share/wordlists/rockyou.txt --usernames
 ```
 
 Esto nos da la contraseña del usuario `c0ldd` que resulta ser el administrador del sitio web, por lo que obtenemos acceso a todas las funcionalidades de WordPress en el sitio web.
+
+> [!tip]
+> **Tip de CTF:**
+> A veces las credenciales de la base de datos son las mismas que las del usuario `root` o un usuario del sistema (SSH). **¡Pruébalas siempre!**
 
 # <font color=red>[+]</font> Explotación para Acceso al Sistema
 
