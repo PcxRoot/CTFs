@@ -113,8 +113,8 @@ Actualmente, es matemáticamente inviable romper el ***RSA***, así que lo que d
 >Si muestra algo como:
 >```
 >Using default input encoding: UTF-8
-Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])
-No password hashes left to crack (see FAQ)
+>Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])
+>No password hashes left to crack (see FAQ)
 >```
 >
 >Es porque `john` ya ha crackeado ese hash antes y no va a volver a gastar recursos del sistema. Para ver la contraseña tan solo debemos usar:
