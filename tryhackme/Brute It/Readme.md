@@ -80,7 +80,7 @@ Tras realizar un primer intento de *login* usando unas credenciales como *test:t
 >
 >En este mismo repositorio les dejo el código que he creado para realizar el ataque con el objetivo de ayudarles a crear su propia herramienta o darles ideas.
 >
->***\[Código Python\]***
+>***[Códig Python](./Brute-Force_web.py)***
 
 Una vez encontrada la contraseña, se nos redirigirá a un *endpoint* que contiene una de las *flags* que solicita el *CTF* y un enlace en el cual se encuentra una ***clave SSH RSA privada cifrada***.
 ## La Clave SSH Cifrada
