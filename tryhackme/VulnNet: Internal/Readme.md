@@ -334,7 +334,7 @@ grep -i token *
 catalina.out:[TeamCity] Super user authentication token: 6027884085891035972 (use empty username with the token as the password to access the server)
 ```
 
->[!info]
+>[!note]
 >Tal vez muestre varios tokens, supongo que será debido a que el token es temporal así que usando el último debería de funcionar.
 
 >[!warning]
