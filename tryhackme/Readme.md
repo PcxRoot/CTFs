@@ -17,7 +17,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __Mr Robot__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Mr%20Robot) |
 | __DAV__ | 🟢 Fácil | Web/Linux | [Ver guía](./DAV) |
 | __VunNet: Internal__ | 🟢 Fácil / 🟡 Intermedio | (SAMBA/NFS/Redis/rsync)/Linux | [Ver guía](./VulnNet:%20Internal) |
-| __Brute It__ | 🟢 Fácil | (Web/Fuerza Bruta/Cracking)Linux | [Ver guía](./Brute%20It) |
+| __Brute It__ | 🟢 Fácil | (Web/Fuerza Bruta/Cracking)/Linux | [Ver guía](./Brute%20It) |
 
 ## 🛠️ Metodología Utilizada
 
