@@ -26,7 +26,7 @@ PORT    STATE SERVICE
 sudo nmap -p 22,80,443 -Pn -n -sVC -oN versiones.nmap $IP
 
 PORT    STATE SERVICE VERSION
-22/tcp  open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+22/tcp  open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.13 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey: 
 |   3072 61:c4:9f:3b:06:a1:c9:5b:da:51:d7:8f:04:a0:17:83 (RSA)
 |   256 e5:55:32:54:94:b0:7a:32:05:51:c8:c7:4b:a9:18:cc (ECDSA)
