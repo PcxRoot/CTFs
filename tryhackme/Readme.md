@@ -35,4 +35,4 @@ __Post-Explotación:__ Recolección de información local y búsqueda de vectore
 ---
 
 >[!TIP]
->Si estás empezando en THM, te recomiendo mucho las salas de "Pre-Security" y "Complete Beginner" para asentar las bases.
+>Si estás empezando en THM, te recomiendo mucho las salas de "_Pre-Security_" y "_Complete Beginner_" para asentar las bases.
