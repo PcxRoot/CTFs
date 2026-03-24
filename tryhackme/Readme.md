@@ -18,7 +18,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __DAV__ | 🟢 Fácil | Web/Linux | [Ver guía](./DAV) |
 | __VunNet: Internal__ | 🟢 Fácil / 🟡 Intermedio | (SAMBA/NFS/Redis/rsync)/Linux | [Ver guía](./VulnNet:%20Internal) |
 | __Brute It__ | 🟢 Fácil | (Web/Fuerza Bruta/Cracking)/Linux | [Ver guía](./Brute%20It) |
-| __Bounty Hacker__ | 🟢 Fácil | (Web/Fuerza Bruta)/Linux | [Ver guía](./Bounty%20Hacker) |
+| __Bounty Hacker__ | 🟢 Fácil | (Web/Fuerza Bruta/FTP)/Linux | [Ver guía](./Bounty%20Hacker) |
 
 ## 🛠️ Metodología Utilizada
 
