@@ -3,7 +3,7 @@
 En este apartado documento mi paso por la plataforma TryHackMe, detallando la resolución de máquinas, retos de redes y rutas de aprendizaje (_Learning Paths_).
 
 ## 📊 Resumen de Actividad
-- __Perfil de THM:__ Calvinh0
+- __Perfil de THM:__ _Calvinh0_
 - __Enfoque:__ Enumeración de red, explotación de servicios web y escalada de privilegios en Linux/Windows.
 
 ## 📂 Contenido del Directorio
