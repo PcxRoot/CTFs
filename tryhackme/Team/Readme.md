@@ -126,7 +126,7 @@ Hasta le momento, no hemos encontrado nada de interés. En el ***Pentesting*** n
 >   
 >   Sabiendo esto, nuestra misión es encontrar el archivo que contiene la versión anterior del código con la finalidad de obtener las credenciales.
 >   
->   Como ir probando manualmente las posibles extensiones puede ser tedioso y provocar errores, he creado un pequeño script en `bash` que automatiza las peticiones de varias de las posibles extensiones. [***Código Bash***](./enumeration_bash.sh)
+>   Como ir probando manualmente las posibles extensiones puede ser tedioso y provocar errores, he creado un pequeño script en `bash` que automatiza las peticiones de varias de las posibles extensiones. [***Código Bash***](./enumeration.sh)
 >
 >Encontramos el archivo con el código que contiene las credenciales *hardoceadas* y accedemos al servicio `ftp`.
 >```bash
