@@ -20,6 +20,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __Team__ | 🟢 Fácil | (Web/Fuzzing/LXD)/Linux | [Ver guía](./Team) |
 | __VunNet: Internal__ | 🟢 Fácil / 🟡 Intermedio | (SAMBA/NFS/Redis/rsync)/Linux | [Ver guía](./VulnNet:%20Internal) |
 | __Mr Robot__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Mr%20Robot) |
+| __Wonderland__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Wonderland) |
 
 ## 🛠️ Metodología Utilizada
 
