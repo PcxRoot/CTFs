@@ -4,6 +4,7 @@ Aquí detallo la resolución de retos tipo Capture The Flag (CTF) que abarcan de
 
 ## 📊 Resumen de Actividad
 **Perfil de picoCTF:** ***pcxroot***
+
 **Enfoque:** Resolución de retos modulares, análisis de binarios, criptografía avanzada y técnicas de esteganografía.
 
 ## 📂 Contenido del Directorio
