@@ -1,4 +1,4 @@
-# Contexto
+# 📚 Contexto
 
 Este reto consiste en un panel de login web que debemos vulnerar realizando un ataque de fuerza bruta usando las contraseñas que nos da el mismo laboratorio. No obstante, el servicio web implementa un ***Rate Limit*** que por cada contraseña incorrecta debemos esperar 20 minutos para volver a intentarlo.
 
@@ -9,7 +9,7 @@ Esta es la información de interés que tenemos sobre el reto:
 Como el servicio web tan solo nos permite probar una contraseña cada 20 minutos, el peor de los casos tardaríamos unos $360$ minutos o $6$ horas. Este caso es un ejemplo de ***Rate Limit*** muy extenso, pero nos sirve para comprender que, aun así, si no esta bien implementado, es posible *bypasear* esta implementación. 
 
 Para resolver este reto necesitaremos hacer uso de ***Burp Suite***, un navegador web (opcional) y ***Python*** con la librería `requests`.
-# Reconocimiento
+# 🕵️Reconocimiento
 
 Antes de cualquier actividad de ***Hacking Ético*** es imprescindible realizar una fase de reconocimiento mediante el cual obtendremos una idea de como funciona el flujo de datos.
 
@@ -38,8 +38,8 @@ HTTP1.1 429 Too Many Requests
 >En el caso de que no te salga la clave-valor `"error"` manda una nueva petición.
 
 Si queremos seguir probando debemos de esperar 20 minutos hasta que el servidor desbanee nuestra IP y podemos realizar una nueva petición (obviamente no vamos a hacerlo).
-# Explotación
-## Explicación
+# 💣Explotación
+## ✒️Explicación
 
 En el tráfico moderno, es común que nuestra petición no llegue directamente al servidor final, sino que pase por ***proxies, balanceadores de carga*** o ***CDNs*** (como Cloudflare).
 
@@ -63,7 +63,7 @@ Esto es peligroso porque las cabeceras HTTP son enviadas por el cliente y ***pue
 
 >[!caution]
 >Si el servidor confía ciegamente en `X-Forwarded-For`, un atacante puede "*hacerse pasar*" por cualquier IP simplemente editando la petición con herramientas como ***Burp Suite*** o ***Python***.
-### Exploit
+### 💥Exploit
 
 Para explotar la vulnerabilidad creamos un script en ***Python*** que añada estas cabeceras `X-Forwarded-For` para engañar al servidor y que este vea diferentes IPs.
 
