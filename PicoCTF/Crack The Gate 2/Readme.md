@@ -67,4 +67,4 @@ Esto es peligroso porque las cabeceras HTTP son enviadas por el cliente y ***pue
 
 Para explotar la vulnerabilidad creamos un script en ***Python*** que añada estas cabeceras `X-Forwarded-For` para engañar al servidor y que este vea diferentes IPs.
 
-[Ver exploit](./script.py)
+***[Ver exploit](./script.py)***
