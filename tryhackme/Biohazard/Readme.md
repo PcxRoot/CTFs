@@ -38,7 +38,7 @@ También he realizado una petición `GET` usando `curl` para ver de forma rápid
 ```bash
 curl -i http://$IP
 ```
-Y viendo el código fuente detecto dos subdirectorios (`/images/` y `/mansionmain/`, por lo que ampliamos nuestra superficie de ataque.
+Y viendo el código fuente detecto dos subdirectorios (`/images/` y `/mansionmain/`, por lo que ampliamos nuestra superficie de ataque).
 ### /mansionmain/
 
 Si seguimos el flujo de trabajo que quiere el ***CTF***, entramos en el enlace hacia `/mansionmain` en el que se carga un `index.html` en el que se nos sigue contando la historia. Al final se nos pregunta dónde se encuentra la habitación desde la cual se ha escuchado un disparo. 
