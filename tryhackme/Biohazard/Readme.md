@@ -266,7 +266,7 @@ La siguiente imagen que miro es la ***003*** ya que tiene un comentario que dice
 He usado `binwalk` y he encontrado un archivo `.zip` que contenía la tercera parte de la contraseña.
 
 >[!Note]
->cuando `binwalk` encuentra un archivo ***ZIP*** dentro un ***JPG***, estamos ante una técnica denominada ***File Carving***.
+>Cuando `binwalk` encuentra un archivo ***ZIP*** dentro un ***JPG***, estamos ante una técnica denominada ***File Carving***.
 >- Los archivos - JPEG tienen un marcador de "Fin de Archivo" (EOF) llamado `FF D9`.
 >- Muchos esteganógrafos simplemente "pegan" un archivo ZIP justo después de ese marcador.
 >- El visor de imágenes ignora todo lo que hay después del `FF D9`, pero `binwalk` escanea la estructura binaria completa y lo detecta.
