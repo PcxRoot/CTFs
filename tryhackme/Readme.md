@@ -23,6 +23,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __Mr Robot__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Mr%20Robot) |
 | __Wonderland__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Wonderland) |
 | __Develpy__ | 🟡 Intermedio | (***Python***/Web)/Linux | [Ver guía](./Develpy) |
+| __Biohazard__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Biohazard) |
 
 ## 🛠️ Metodología Utilizada
 
