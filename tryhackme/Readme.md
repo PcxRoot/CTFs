@@ -24,6 +24,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __Wonderland__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Wonderland) |
 | __Develpy__ | 🟡 Intermedio | (***Python***/Web)/Linux | [Ver guía](./Develpy) |
 | __Biohazard__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Biohazard) |
+| __Cooctus Stories__ | 🟡 Intermedio | (RPC/Web/Python/C/GIT)/Linux | [Ver guía](./Cooctus%20Stories) |
 
 ## 🛠️ Metodología Utilizada
 
