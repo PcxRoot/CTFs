@@ -19,6 +19,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __Bounty Hacker__ | 🟢 Fácil | (Web/Fuerza Bruta/FTP)/Linux | [Ver guía](./Bounty%20Hacker) |
 | __Team__ | 🟢 Fácil | (Web/Fuzzing/LXD)/Linux | [Ver guía](./Team) |
 | __StartUp__ | 🟢 Fácil | (Web/FTP)/Linux | [Ver guía](./StartUp) |
+| __Break Out The Cage__ | 🟢 Fácil | (Web/FTP/Espetrografía/Vigènere)/Linux | [Ver guía](./Break%20Out%20The%20Cage) |
 | __VunNet: Internal__ | 🟢 Fácil / 🟡 Intermedio | (SAMBA/NFS/Redis/rsync)/Linux | [Ver guía](./VulnNet:%20Internal) |
 | __Mr Robot__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Mr%20Robot) |
 | __Wonderland__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Wonderland) |
