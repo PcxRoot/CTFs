@@ -26,6 +26,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __Biohazard__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Biohazard) |
 | __Cooctus Stories__ | 🟡 Intermedio | (RPC/Web/Python/C/GIT)/Linux | [Ver guía](./Cooctus%20Stories) |
 | __ContainMe__ | 🟡 Intermedio | (Web/LFI/RCE/IntraNet/MySQL)/Linux | [Ver guía](./ContainMe) |
+| __Chronicle__ | 🟡 Intermedio | (Web/JS/API/Caché/Buffer Overflow)/Linux | [Ver guía](./Chronicle) |
 
 ## 🛠️ Metodología Utilizada
 
