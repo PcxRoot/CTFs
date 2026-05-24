@@ -213,3 +213,34 @@ En el segundo email se nos muestra que el tal Sean es el administrador y que por
 Dicho código pienso que parece ser algún cifrado César y prueba los distintos desplazamientos para ver si consigo algo que parezca funcionar. Al no tener éxito. vuelvo a pensar el en cifrado ***Vigènere*** y pruebo si funciona la misma clave que la vez anterior sin éxito de nuevo.
 
 Mirando mejor el email, veo hay una palabra que se muestra varias veces y con mayúsculas, como si el creador del CTF quisiera que nos fijáramos en ella. Por lo que la uso como clave y obtenga la contraseña del usuario `root`.
+
+# <font color=red>[+]</font> Explicaciones
+
+## <font color=red>[~]</font> Errores al elevar privilegios
+
+Cuando inyectábamos `/bin/bash -p` en el archivo `.quotes`, el ataque fallaba por lo siguiente:
+### El bloqueo de la "Shell Ciega"
+
+- **El origen:** El script de Python no lo etsabamos ejecutando nosotros en nuestra pantalla; lo estaba ejecutando el demonio `cron` (o `systemd`) en el fondo del sistema, de forma totalmente invisible.
+    
+- **El nacimiento:** Cuando el script lee nuestro comando e invoca `/bin/bash -p`, la shell del usuario `cage` **sí se abre** y funciona... pero se abre dentro de ese proceso invisible de cron.
+    
+- **El problema de los cables:** Esa nueva shell de `cage` no está conectada a nuestra sesión de SSH (nuestra pantalla). Sus "cables" de entrada y salida están conectados al vacío (al proceso de cron).
+
+>**En resumen:** La shell se ejecutaba con éxito como el usuario `cage`, pero se quedaba "ciega y sorda" en el fondo del sistema. Como nosotros no podíamos escribir comandos en ella ni ver lo que respondía, la tarea de cron terminaba a los pocos segundos, cerraba la shell y a nosotros nos parecía que no había pasado nada.
+
+### Por qué la reverse shell con `nc` si funcinó?
+
+1. El script de cron (como `cage`) ejecuta el comando de Netcat (`nc`).
+    
+2. En lugar de abrir la shell en el fondo invisible, el comando agarra de forma activa los "cables" de esa shell (nuestra entrada y salida) y los **manda a través de la red** hacia nuestra dirección IP y nuestro puerto `5555`.
+    
+3. Como estamos escuchando en nuestra máquina con otro Netcat, los cables se conectan a nuestra propia pantalla. Ahora sí podemos escribir y recibir las respuestas de `cage`.
+
+Por eso, para hackear un proceso automatizado que corre en el fondo (como un *cronjob*), casi nunca nos servirá ejecutar un binario a secas; siempre necesitaremos una **Reverse Shell** (que nos  mande la conexión a nosotros) o una **Bind Shell** (que abra un puerto en la máquina víctima para que nos conectemos).
+
+### Por qué copiar y modificar los privilegios de `bash`  si funcinó?
+
+"A diferencia de los intentos anteriores donde la shell se abría en la memoria del proceso de fondo de Cron y moría inmediatamente, este comando aprovecha que el script corre como `cage` para realizar cambios persistentes en el disco.
+
+Al copiar el binario a `/tmp/bash` y asignarle el bit SUID (`chmod +s`), el archivo modificado permanece en el sistema tras finalizar la tarea de Cron. Posteriormente, el auditor puede interactuar con este binario persistente ejecutándolo con el parámetro `/tmp/bash -p`. Esto evita que Bash descarte los privilegios heredados, consolidando una escalada de privilegios exitosa a `euid=1000` (`cage`)."
