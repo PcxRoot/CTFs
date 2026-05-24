@@ -102,7 +102,7 @@ En ciberseguridad se usa porque permite "dibujar" imágenes o texto oculto dentr
 
 Cuando usamos un espectrograma (yo use el de ***[academo.org](https://academo.org/demos/spectrum-analyzer/)***), observamos que aparece un código.
 
-<img
+![espectrograma](espectrograma.png)
 
 >Para no estropear la experiencia no mostraré el código, pero como ayuda os diré que a mi me ayudó bastante mirarlo desde algo de distancia.
 
