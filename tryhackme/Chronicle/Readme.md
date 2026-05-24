@@ -128,13 +128,13 @@ Lo primero que se me ocurre es mirar los distintos ***commits*** para ver si pue
    Como esto es un archivo de texto puro (*código python*), el script para descomprimirlo es mucho más sencillo. Solo tenemos que decirle a Python que descomprima el archivo y pinte el texto omitiendo la cabecera interna de Git.
    ```bash
    curl -s "http://$IP/old/.git/objects/cb/f47f50aca7f37aa7f98006174bfcf724be9b5e" | python3 -c "
-import zlib, sys
-data = zlib.decompress(sys.stdin.buffer.read())
-	# Git pone una cabecera 'blob [tamaño]\x00' antes del código. La separamos:
-header, contenido_codigo = data.split(b'\x00', 1)
-print(contenido_codigo.decode('utf-8', errors='ignore'))
-"
-```
+	import zlib, sys
+	data = zlib.decompress(sys.stdin.buffer.read())
+		# Git pone una cabecera 'blob [tamaño]\x00' antes del código. La separamos:
+	header, contenido_codigo = data.split(b'\x00', 1)
+	print(contenido_codigo.decode('utf-8', errors='ignore'))
+	"
+	```
    
    ***Respuesta***
    
