@@ -196,7 +196,7 @@ Estuve tratando de obtener acceso al nuevo usuario de forma directa a través de
 
 1. Podemos crear un nuevo binario ***bash*** con el bit SUID activo del usuario con el que se ejecuta el script `spread_the_quotes.py`.
    ```bash
-   echo "Shell ; cp /bin/bash /tmp/bash ; chmod +sx /tmp/bash"
+   echo "Shell ; cp /bin/bash /tmp/bash ; chmod +sx /tmp/bash" > /opt/.dads_tasks/.files/.quotes
    ```
    
    Así, cuando se ejecute el script `spread_the_quotes.py`, creará una copia del binario `/bin/bash` y le activará el bit SUID. Para ejecutarlo y ganar acceso a una shell con sus permisos, debemos ejecutar el comando:
