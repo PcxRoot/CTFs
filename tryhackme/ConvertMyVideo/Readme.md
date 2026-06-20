@@ -100,13 +100,11 @@ Por lo que para poder realizar la petición de forma correcta debemos de usar el
 
 ![burposuite_ssrf](burposuite_ssrf.png)
 
-![[burposuite_ssrf.png]]
-
 No obstante, volvemos a tener un problema, y es que se nos muestra que el código se almacena en el directorio temporal `/tmp/downloads/...`, y de momento no tenemos forma de llegar hasta a él. Así que debemos de desestimar la idea del ***SSRF*** de momento.
 
 ### <font color=red>[!]</font> RCE (Remote code Exceution)
 
-![[burpsuite.png]]
+![burpsuite](burpsuite.png)
 
 En la captura podemos ver la respuesta del servidor. Y en ella podemos apreciar lo que parece ser la salida del *estándar error* (***STDERR***) de la consola de los sistemas Linux de una herramienta. Tras investigar un poco encontré una herramienta muy conocida para descargar videos de YouTube desde la consola de comandos en sistemas Linux (`youtube-dl`).
 
@@ -132,7 +130,7 @@ yt_url=;id;
 
 ***[Explicación del payload](#explicación-del-payload)***
 
-![[confirmacion_RCE.png]]
+![confirmacion_RCE](confirmacion_RCE.png)
 
 ### <font color=red>[!]</font> RCE (Remote code Exceution)
 
@@ -176,8 +174,7 @@ Una vez creada la reverse shell volvemos a levantar el servidor web con ***pytho
 nc -lvnp 4444
 ```
 
-![[reverseshell_exitosa.png]]
-
+![reverseshell_exitosa](reverseshell_exitosa.png)
 
 >[!Note]
 >Al usar `curl` estamos haciendo que el servidor lea el contenido del archivo (podemos comprobarlo nosotros mismos si usamos el comando `curl http://localhost/shell.sh`) y al entubar la salida (el contenido del fichero, que es la reverse shell escrita en ***bash***) hacemos que se ejecute directamente en memoria, sin almacenar ningún tipo de archivo que pueda perjudicar a nuestra persistencia.
@@ -194,7 +191,7 @@ nc -lvnp 4444
 >
 >Ahora volvemos a hacer uso de la vulnerabilidad ***SSRF*** especificando que antes de ejecutar la reverse shell con bash, esta debe ser decodificada en ***base 64***.
 >
->![[reverse_shell_base64.png]]
+>![reverse_shell_base64](reverse_shell_base64.png)
 
 # <font color=red>[+]</font> Post-Explotación
 
