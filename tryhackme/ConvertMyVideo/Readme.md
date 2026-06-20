@@ -98,7 +98,7 @@ De esta forma, si ponemos la URL de nuestra reverse shell directamente, se conca
 
 Por lo que para poder realizar la petición de forma correcta debemos de usar el ***Repeater*** de ***Burp Suite***, con el que podremos especificar con exactitud la URL a la que realizar la petición.
 
-<img src="./burposuite_ssrf.png" alt="burposuite_ssrf" />
+![burposuite_ssrf](burposuite_ssrf.png)
 
 ![[burposuite_ssrf.png]]
 
