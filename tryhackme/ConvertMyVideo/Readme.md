@@ -98,6 +98,8 @@ De esta forma, si ponemos la URL de nuestra reverse shell directamente, se conca
 
 Por lo que para poder realizar la petición de forma correcta debemos de usar el ***Repeater*** de ***Burp Suite***, con el que podremos especificar con exactitud la URL a la que realizar la petición.
 
+<img src="./burposuite_ssrf.png" alt="burposuite_ssrf" />
+
 ![[burposuite_ssrf.png]]
 
 No obstante, volvemos a tener un problema, y es que se nos muestra que el código se almacena en el directorio temporal `/tmp/downloads/...`, y de momento no tenemos forma de llegar hasta a él. Así que debemos de desestimar la idea del ***SSRF*** de momento.
