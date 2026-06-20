@@ -128,7 +128,7 @@ Priority: u=0
 yt_url=;id;
 ```
 
-***[[#Explicación del *payload*|Explicación del payload]]***
+***[Explicación del payload](#explicacion_del_payload)***
 
 ![[confirmacion_RCE.png]]
 
