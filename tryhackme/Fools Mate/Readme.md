@@ -35,7 +35,7 @@ Siendo las piezas blancas, partimos con la ventaja de tener una pieza extra (la 
 >El ***mate del pasillo*** ocurre cuando el rey está atrapado en la última fila por sus propios peones, sin poder moverse a los lados.
 >
 >En esta ocasión, nuestra torre en `a1` nos permite realizar este mate moviéndolo a la casilla `a8`.
->![Mate del pasillo](./Mate%20del%20pasillo)
+>![Mate del pasillo](./Mate_del_pasillo)
 
 Sin embargo, si intentamos este movimiento (o cualquier otro que nos permite hacer ***Jaque Mate***) nos mostrará una ventana emergente estilo retro que nos mostrará el mensaje `"I'll shut down your PC if you play that."`.
 
