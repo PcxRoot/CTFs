@@ -44,6 +44,27 @@ Viendo el código fuente de la app, podemos ver que se carga un archivo JavaScri
 
 ***[Código JavaScript](./app.js)***
 
+Lo primero que debemos saber es en bajo que circunstancias se nos devuelve la *flag* desde el servidor. Viendo el código descubrimos que cuando conseguimos hacer ***Jaque Mate*** se nos devuelve la *flag* en formato ***JSON*** en la respuesta del servidor.
+
+El problema viene con la función `preMoveCheck()`, en la cual vemos que si el movimiento que vamos a mandar al servidor es un ***Jaque Mate*** se muestra el mensaje que comentamos antes y no se manda la petición al servidor.
+
+```JS
+function preMoveCheck(from, to, promotion) {
+  const probe = new Chess(game.fen());
+  let result;
+  try {
+    result = probe.move({ from, to, promotion: promotion || undefined });
+  } catch (e) {
+    result = null;
+  }
+  if (result && probe.isCheckmate()) {
+    showSystemNotice("I'll shut down your PC if you play that.");
+    return false;
+  }
+  return true;
+}
+```
+
 ### Client-Side Validation Bypass
 
 La estructura de la aplicación web tiene una vulnerabilidad crítica en como gestiona la validación de la lógica del programa. El problema está en que el código que valida si la jugada del usuario es ***Jaque Mate*** para bloquearlo vive en el código JavaScript que se ejecuta en el ***navegador*** (es decir, en el ***Cliente***).
