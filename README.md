@@ -15,9 +15,9 @@ __Conceptos Teóricos:__ Breves notas sobre por qué funcionan las vulnerabilida
 ## 📂 Estructura del Repositorio
 El contenido está organizado por plataformas para facilitar la navegación:
 
-- [TryHackMe](./tryhackme/)
+- ***[TryHackMe](./tryhackme/)***
 
-- [PicoCTF](./PicoCTF)
+- ***[PicoCTF](./PicoCTF)***
 
 ## 🚀 Tecnologías y Herramientas Comunes
 ![Nmap](https://img.shields.io/badge/Nmap-E1D918?style=for-the-badge&logo=nmap&logoColor=white)
