@@ -27,7 +27,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Cuando accedemos a la app web nos encontramos con una partida de ajedrez casi terminada. La situación es la siguiente:
 
-![[tablero_ajedrez_inicial.png]]
+![tablero_ajedrez_inicial](./tablero_ajedrez_inicial.png)
 
 Siendo las piezas blancas, partimos con la ventaja de tener una pieza extra (la torre en `a1`), la cual nos permite ganar la partida en un movimiento.
 
@@ -35,7 +35,7 @@ Siendo las piezas blancas, partimos con la ventaja de tener una pieza extra (la 
 >El ***mate del pasillo**** ocurre cuando el rey está atrapado en la última fila por sus propios peones, sin poder moverse a los lados.
 >
 >En esta ocasión, nuestra torre en `a1` nos permite realizar este mate moviéndolo a la casilla `a8``.
->![[Mate del pasillo.png]]
+>![Mate del pasillo](./Mate del pasillo)
 
 Sin embargo, si intentamos este movimiento (o cualquier otro que nos permite hacer ***Jaque Mate***) nos mostrará una ventana emergente estilo retro que nos mostrará el mensaje `"I'll shut down your PC if you play that."`.
 
