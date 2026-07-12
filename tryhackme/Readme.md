@@ -21,6 +21,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __StartUp__ | 🟢 Fácil | (Web/FTP)/Linux | [Ver guía](./StartUp) |
 | __Break Out The Cage__ | 🟢 Fácil | (Web/FTP/Espetrografía/Vigènere)/Linux | [Ver guía](./Break%20Out%20The%20Cage) |
 | __VunNet: Internal__ | 🟢 Fácil / 🟡 Intermedio | (SAMBA/NFS/Redis/rsync)/Linux | [Ver guía](./VulnNet:%20Internal) |
+| __Fools Mate__ | 🟢 Fácil | Web/JS/HTTP | [Ver guía](./Fools%20Mate) |
 | __Mr Robot__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Mr%20Robot) |
 | __Wonderland__ | 🟡 Intermedio | Web/Linux | [Ver guía](./Wonderland) |
 | __Develpy__ | 🟡 Intermedio | (***Python***/Web)/Linux | [Ver guía](./Develpy) |
