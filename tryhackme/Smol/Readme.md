@@ -627,7 +627,7 @@ A diferencia del núcleo de WordPress, que es altamente seguro y auditado, los p
 Un problema estructural grave es la lentitud en las correcciones: el ***46% de las vulnerabilidades se hacen públicas sin un parche disponible***, y el tiempo medio para que los *bots* comiencen a explotar una falla divulgada es de apenas ***5 horas***, dejando a los sitios que no se actualizan inmediatamente expuestos a compromisos masivos, inyección de malware y robo de datos.
 
 ---
-## `/etc/pam.d/su`
+## /etc/pam.d/su
 
 ```bash
 #
