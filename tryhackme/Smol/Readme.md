@@ -367,7 +367,7 @@ Para ello podemos, podemos ir a la web ***[revshells](https://www.revshells.com/
 >
 >***Recomiendo encarecidamente primero explotarla de forma manual para comprender como funciona realmente.***
 >
->***[Código ➔](.exploit.py)***
+>***[Código ➔](./exploit.py)***
 
 # <font color=red>[+]</font> Post-Explotación
 
