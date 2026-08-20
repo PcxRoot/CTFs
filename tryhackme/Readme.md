@@ -31,6 +31,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __Chronicle__ | 🟡 Intermedio | (Web/JS/API/Caché/Buffer Overflow)/Linux | [Ver guía](./Chronicle) |
 | __ConvertMyVideo__ | 🟡 Intermedio | (Web/youtube-dl/SSRF/RCE/Cronjob)/Linux | [Ver guía](./ConvertMyVideo) |
 | __Smol__ | 🟡 Intermedio | (Web/WordPress/LFI/MySQL/PasswdCracking/PAM)/Linux | [Ver guía](./Smol) |
+| __Infinity Pool__ | 🟡 Intermedio | (Web/RCE/Internal Services/FreePBX)/Linux | [Ver guía](./Infinity%20Pool) |
 
 ## 🛠️ Metodología Utilizada
 
