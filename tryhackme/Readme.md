@@ -32,7 +32,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 | __ConvertMyVideo__ | 🟡 Intermedio | (Web/youtube-dl/SSRF/RCE/Cronjob)/Linux | [Ver guía](./ConvertMyVideo) |
 | __Smol__ | 🟡 Intermedio | (Web/WordPress/LFI/MySQL/PasswdCracking/PAM)/Linux | [Ver guía](./Smol) |
 | __Infinity Pool__ | 🟡 Intermedio | (Web/RCE/Internal Services/FreePBX)/Linux | [Ver guía](./Infinity%20Pool) |
-| __Toewl on the Sunbed__ | 🟡 Intermedio | Web / Race Condition | [Ver guía](./Towel%20on%20the%20sunbed) |
+| __Towel on the Sunbed__ | 🟡 Intermedio | Web / Race Condition | [Ver guía](./Towel%20on%20the%20sunbed) |
 
 ## 🛠️ Metodología Utilizada
 
