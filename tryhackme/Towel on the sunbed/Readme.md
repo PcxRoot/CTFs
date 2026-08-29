@@ -105,7 +105,7 @@ Password: hacker
 
 Si vemos la comunicación HTTP:
 
-![[Pasted image 20260828112008.png]]
+[test](./Pasted%20image%2020260828112008.png)
 
 Vemos que se ha creado la cuenta correctamente y se nos redirige al *endpoint* `/dashboard`.
 
@@ -281,11 +281,11 @@ La siguiente en prioridad, por lo tanto, es la funcionalidad de reclamar premio,
 
 Si revisamos las peticiones HTTP realizadas hasta ahora en nuestro *Burp Suite*, veremos que al reclamar la recompensa se hace una petición ***HTTP POST*** al *endpoint* `/claim`. Ahora nuestro botón está deshabilitado en la página web, no obstante esta funcionalidad se encuentra en el *frontend*, por lo que podemos habilitarla de nuevo si eliminamos el atributo `disabled` del elemento `button` con `id="claim-btn"`.
 
-![[Pasted image 20260828115931.png]]
+[test](./Pasted%20image%2020260828115931.png)
 
 Al eliminar dicho atributo podremos volver a presionar el botón, pero se nos mostrará un mensaje que dice: `La recompensa ya ha sido reclamada`. Podemos ver la respuesta del *backend* usando de nuevo `curl` o las herramientas de desarrollador del navegador.
 
-![[Pasted image 20260828120226.png]]
+[test](./Pasted%20image%2020260828120226.png)
 
 >Parece que la validación se hace en el *backend* a través de nuestra cuenta y no en el *frontend*, por lo que no vamos a conseguir engañar al servidor para que nos deje repetir reclamar la recompensa.
 
@@ -303,31 +303,31 @@ Para ello, salimos de la sesión actual y registramos una nueva cuenta (por ejem
 
 Dentro de nuestro *Burp Suite*, buscamos la petición POST de cuando reclamamos la recompensa con la cuenta anterior.
 
-![[Pasted image 20260829204604.png]]
+[test](./Pasted%20image%2020260829204604.png)
 
 Una vez la hayamos dectado, la enviamos al *Repeater de Burp Suite* con la combinación de teclas `CTRL+R`.
 
-![[Pasted image 20260829204730.png]]
+[test](./Pasted%20image%2020260829204730.png)
 
 Una vez tengamos la petición en el *Repeater*, debemos de cambiar la cookie de sesión (*ya que recordemos que esta petición se realizó con la primera cuenta, la cual ya está bloqueada hasta dentro de 24 horas*). Para ello tomaremos la cookie de sesión de la nueva cuenta, ya sea desde las herramientas de desarrollador en el navegador, o de alguna de las peticiones HTTP que ya hemos realizado con la segunda cuenta y que podemos ver a través del Proxy *Burp Suite*.
 
 Cuando hayamos cambiado la cookie de sesión por la de la nueva cuenta, debemos de crear un grupo de varias peticiones que mandaremos en paralelo al servidor. Podemos hacerlo enviando de nuevo al *Repeater* la misma petición que ya tenemos en él con `CTRL+R`.
 
-![[Pasted image 20260829205221.png]]
+[test](./Pasted%20image%2020260829205221.png)
 
 >En esta ocasión he generado 15 peticiones en total.
 
 Para crear el grupo debemos de hacer clic en el símbolo `+` tras la última petición t hacer clic en `New tab group`, seleccionamos la opción `Select all` y creamos el grupo:
 
-![[Pasted image 20260829205359.png]]
+[test](./Pasted%20image%2020260829205359.png)
 
-![[Pasted image 20260829205501.png]]
+[test](./Pasted%20image%2020260829205501.png)
 
-![[Pasted image 20260829205521.png]]
+[test](./Pasted%20image%2020260829205521.png)
 
 Una vez tengamos el grupo, pulsaremos en el desplegable junto a `Send` y usaremos la opción `Send group in parallel (last-byte sync)`.
 
-![[Pasted image 20260829205628.png]]
+[test](./Pasted%20image%2020260829205628.png)
 
 Tras esto enviaremos las peticiones y podremos ver en la respuesta de las distintas peticiones que se han aceptado y obtendremos varios PONZI:
 
@@ -346,7 +346,7 @@ Keep-Alive: timeout=5
 
 Ahora tan solo deberemos de volver al navegador y recargar la página para que se nos muestre nuestro nuevo balance:
 
-![[Pasted image 20260829205858.png]]
+[test](./Pasted%20image%2020260829205858.png)
 
 >Ahora podremos reclamar la recompensa de las ballenas y obtener la flag del CTF.
 
