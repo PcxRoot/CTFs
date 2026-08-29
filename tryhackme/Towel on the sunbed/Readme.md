@@ -260,11 +260,11 @@ Para ver la respuesta del servidor podemos realizar la petición desde `curl`, p
    curl -s "http://$IP:3000/vault" -b cookies.txt
    
    {
-  "error": "Access denied. Whale-tier balance required.",
-  "currentBalance": 0,
-  "required": 150,
-  "shortfall": 150
-}
+      "error": "Access denied. Whale-tier balance required.",
+      "currentBalance": 0,
+      "required": 150,
+      "shortfall": 150
+    }
    ```
    
    Vemos que nos devuelve un error que nos detalla que no pertenecemos al *Whale-tier*, ya que tenemos un balance de `0` cuando es necesario `150`.
