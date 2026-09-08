@@ -11,7 +11,7 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 
 | Sala/Máquina | Dificultad | Categoría | Write-up |
 | :--- | :--- | :--- | :--- |
-| __Fireflow__ | 🟡 Intermedio | (Web/Langflow/API/Kubernetes/WebSockets)/Linux | [Ver guía](./Fireflow) |
+| __Fireflow__ | 🟡 Intermedio | (Web/Langflow/API/JWT/MCP/JSON-RPC/Kubernetes/WebSockets)/Linux | [Ver guía](./Fireflow) |
 
 
 ## 🛠️ Metodología Utilizada
