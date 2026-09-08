@@ -177,7 +177,7 @@ Navegando directamente al *endpoint* `/openapi.json`, logramos descargar la espe
 
 *Ejemplo de salida con [editor.swagger.io](https://editor.swagger.io/)*
 
-![[imagen de fireflow.png]]
+![imagen de fireflow.png](./imagen%20de%20fireflow.png)
 
 ### <font color=red>[-]</font> Langflow
 
