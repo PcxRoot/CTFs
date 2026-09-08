@@ -1448,7 +1448,7 @@ La cabecera funciona devolviendo uno de estos dos valores estrictos:
 
 Hoy en día, aunque `X-Frame-Options` sigue siendo muy común y efectiva, el estándar de la industria es complementarla o sustituirla por la cabecera **Content-Security-Policy (CSP)** utilizando la directiva `frame-ancestors`. Esta directiva moderna es mucho más flexible porque te permite crear listas blancas de múltiples dominios externos autorizados para incrustar tu contenido.
 
-## El problema de la pagina en blanco
+## El problema de la página en blanco
 
 Al intentar visitar la ruta `/docs` en el navegador para interactuar con la API, la página cargaba completamente en blanco. El motivo se encuentra en la estricta cabecera de seguridad configurada en el servidor:
 
