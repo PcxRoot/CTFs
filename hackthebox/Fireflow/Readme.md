@@ -171,7 +171,7 @@ Del análisis de esta respuesta extraemos información clave sobre la arquitectu
 - ***Framework utilizado:*** El favicon (`fastapi.tiangolo.com`) es una firma por defecto que delata el uso del framework ***FastAPI*** (basado en Python).
 - ***Proxy Inverso:*** La cabecera `Server: nginx` confirma el uso de ***Nginx*** como intermediario.
 
-No obstante, cuando tratamos de acceder a la ***Swagger UI*** en `/docs` nos encontramos con que la página no carga (***[[#El problema de la página en blanco|Explicación]]***). Para sortear este problema visual, revisamos el código JavaScript embebido en la respuesta y localizamos la ruta de donde la interfaz gráfica intentaba extraer los datos: `url: /openapi.json`.
+No obstante, cuando tratamos de acceder a la ***Swagger UI*** en `/docs` nos encontramos con que la página no carga (***[Explicación](el_problema_de_la_página_en_blanco***). Para sortear este problema visual, revisamos el código JavaScript embebido en la respuesta y localizamos la ruta de donde la interfaz gráfica intentaba extraer los datos: `url: /openapi.json`.
 
 Navegando directamente al *endpoint* `/openapi.json`, logramos descargar la especificación cruda de la API, obteniendo así el mapa completo de rutas y la versión exacta del software. No obstante, para poder leer el contenido de dicho *endpoint* es recomendable usar herramientas como `jq` para embellecer la salida, o incluso podemos usar herramientas web para poder ver el contenido en una interfaz gráfica.
 
@@ -196,7 +196,7 @@ A nivel interno, la plataforma funciona de la siguiente manera:
 >[!warning]
 >*Saber que nos enfrentamos a Langflow (y que está construido con Python/FastAPI) nos indica que la aplicación maneja constantemente la **interpretación de datos dinámicos**. En este tipo de plataformas, si la validación de los datos de entrada (_input sanitization_) no es estricta, la línea entre "configurar un flujo de IA" e "inyectar código malicioso en el sistema operativo subyacente" puede volverse muy fina, abriendo vectores potenciales de ejecución remota de comandos.*
 
-Mirando el *endpoint* `/openapi.json` descubrimos que la aplicación corre bajo la versión `1.8.2`. Si buscamos vulnerabilidades sobre esta versión encontramos un ***RCE crítico (CVE-2026-33017 | [[#CVE-2026-33017|Explicación]])***.
+Mirando el *endpoint* `/openapi.json` descubrimos que la aplicación corre bajo la versión `1.8.2`. Si buscamos vulnerabilidades sobre esta versión encontramos un ***RCE crítico (CVE-2026-33017 | [Explicación](cve-2026-33017)***.
 
 Para poder explotar la vulnerabilidad, podemos usar un *exploit* público como el del siguiente [Repositorio de GitHub](https://github.com/EQSTLab/CVE-2026-33017).
 
@@ -348,7 +348,7 @@ Cuando miramos dentro de `~/.mcp` encontramos un archivo `config.json`, cuyo con
 }
 ```
 
-En este archivo de configuración encontramos un nuevo servidor que corre en el puerto `30080`. Sin embargo, si miramos los puertos a la escucha en la máquina no veremos el puerto (***[[#Puerto 30080]]***).
+En este archivo de configuración encontramos un nuevo servidor que corre en el puerto `30080`. Sin embargo, si miramos los puertos a la escucha en la máquina no veremos el puerto (***[Explicación](puerto_30080***).
 
 ### <font color=red>[-]</font> Descubrimiento de la Superficie de Ataque y Fallo en JWT
 
@@ -1082,7 +1082,7 @@ curl -s -X POST http://localhost:30080/api/v1/tools -H "Content-Type: applicatio
 ```
 
 >[!important]
->***[[#Reverse Shell con técnica de doble fork]]***
+>***[Reverse Shell con técnica de doble fork](reverse_shell_con_técnica_de_doble_fork)***
 
 ###### 2. Ejecutamos la herramienta
 
