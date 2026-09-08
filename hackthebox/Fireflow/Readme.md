@@ -171,7 +171,7 @@ Del análisis de esta respuesta extraemos información clave sobre la arquitectu
 - ***Framework utilizado:*** El favicon (`fastapi.tiangolo.com`) es una firma por defecto que delata el uso del framework ***FastAPI*** (basado en Python).
 - ***Proxy Inverso:*** La cabecera `Server: nginx` confirma el uso de ***Nginx*** como intermediario.
 
-No obstante, cuando tratamos de acceder a la ***Swagger UI*** en `/docs` nos encontramos con que la página no carga (***[Explicación](#el_problema_de_la_página_en_blanco)***). Para sortear este problema visual, revisamos el código JavaScript embebido en la respuesta y localizamos la ruta de donde la interfaz gráfica intentaba extraer los datos: `url: /openapi.json`.
+No obstante, cuando tratamos de acceder a la ***Swagger UI*** en `/docs` nos encontramos con que la página no carga (***[Explicación](#el_problema_de_la_pagina_en_blanco)***). Para sortear este problema visual, revisamos el código JavaScript embebido en la respuesta y localizamos la ruta de donde la interfaz gráfica intentaba extraer los datos: `url: /openapi.json`.
 
 Navegando directamente al *endpoint* `/openapi.json`, logramos descargar la especificación cruda de la API, obteniendo así el mapa completo de rutas y la versión exacta del software. No obstante, para poder leer el contenido de dicho *endpoint* es recomendable usar herramientas como `jq` para embellecer la salida, o incluso podemos usar herramientas web para poder ver el contenido en una interfaz gráfica.
 
@@ -1448,7 +1448,7 @@ La cabecera funciona devolviendo uno de estos dos valores estrictos:
 
 Hoy en día, aunque `X-Frame-Options` sigue siendo muy común y efectiva, el estándar de la industria es complementarla o sustituirla por la cabecera **Content-Security-Policy (CSP)** utilizando la directiva `frame-ancestors`. Esta directiva moderna es mucho más flexible porque te permite crear listas blancas de múltiples dominios externos autorizados para incrustar tu contenido.
 
-## El problema de la página en blanco
+## El problema de la pagina en blanco
 
 Al intentar visitar la ruta `/docs` en el navegador para interactuar con la API, la página cargaba completamente en blanco. El motivo se encuentra en la estricta cabecera de seguridad configurada en el servidor:
 
