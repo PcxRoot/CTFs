@@ -19,6 +19,8 @@ El contenido está organizado por plataformas para facilitar la navegación:
 
 - ***[PicoCTF](./PicoCTF)***
 
+- ***[HackTheBox](./hackthebox)***
+
 ## 🚀 Tecnologías y Herramientas Comunes
 ![Nmap](https://img.shields.io/badge/Nmap-E1D918?style=for-the-badge&logo=nmap&logoColor=white)
 ![Burp Suite](https://img.shields.io/badge/Burp%20Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
