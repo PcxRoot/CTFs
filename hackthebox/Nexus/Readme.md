@@ -49,7 +49,7 @@ j.matthew@nexus.htb
 
 Si miramos la página a través de un navegador podemos ver la *ventana modal* pulsando en el botón `View role ->` del final de la página.
 
-![[ventana modal.png|700]]
+![ventana modal.png](./ventana%20modal.png)
 
 ### <font color=red>[#]</font> Fuzzing
 
