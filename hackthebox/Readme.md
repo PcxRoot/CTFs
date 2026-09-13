@@ -11,7 +11,9 @@ Las resoluciones están organizadas por el nombre de la sala o máquina:
 
 | Sala/Máquina | Dificultad | Categoría | Write-up |
 | :--- | :--- | :--- | :--- |
+| __Nexus__ | 🟢 Fácil | (Web/KrayinCRM/Gitea/.env/systemctl list-timers/Path Traversal en Python)/Linux | [Ver guía](./Nexus) |
 | __Fireflow__ | 🟡 Intermedio | (Web/Langflow/API/JWT/MCP/JSON-RPC/Kubernetes/WebSockets)/Linux | [Ver guía](./Fireflow) |
+
 
 
 ## 🛠️ Metodología Utilizada
