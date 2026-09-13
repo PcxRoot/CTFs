@@ -267,7 +267,7 @@ Una vez obtenemos acceso, podemos explotar la vulnerabilidad anterior la cual co
 Ahora, si navegamos al *endpoint* usando nuestro navegador, podremos ejecutar comandos del sistema operativo a través del parámetro `?cmd=` de la URL:
 
 
-![[rce.png]]
+![rce.png](./rce.png)
 
 Ahora que contamos con ejecución remota de código en el servidor, podemos ejecutar una reverse Shell desde la víctima hacia nuestra máquina atacante. Para ello:
 
@@ -710,7 +710,7 @@ Este script crea el `blob` con nuestra regla de `sudo`, los árboles anidados co
 
 Antes de ejecutarlo debemos preparar el repositorio destino. Gitea solo sincroniza los repos marcados como _template_, así que lo creamos desde la propia interfaz web: **New Repository** en el Gitea de `jones`, con nombre `pwn-template`, y en esa misma pantalla de creación marcamos la casilla **Make repository a template**:
 
-![[crear repositorio.png]]
+![crear repositorio.png](./crear%20repositorio.png)
 
 Una vez creemos el repositorio, debemos clonarlo:
 
