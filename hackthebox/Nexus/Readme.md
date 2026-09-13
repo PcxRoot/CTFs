@@ -705,6 +705,7 @@ os.makedirs(os.path.join(".git", "refs", "heads"), exist_ok=True)
 open(os.path.join(".git", "refs", "heads", "main"), "w").write(sha + "\n")
 print("commit:", sha)
 ```
+>Código sacado del Writeup de ***[alecsilva](https://alecsilva.com/posts/nexus-writeup/)***
 
 Este script crea el `blob` con nuestra regla de `sudo`, los árboles anidados con `..` y el *commit* final.
 
