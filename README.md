@@ -4,13 +4,13 @@ Este repositorio centraliza mis resoluciones detalladas de desafíos ***Capture 
 ## 🛠️ ¿Qué encontrarás aquí?
 A diferencia de un simple "paso a paso", cada resolución incluye:
 
-__Enumeración:__ Análisis inicial de servicios y superficies de ataque.
+- __Enumeración:__ Análisis inicial de servicios y superficies de ataque.
 
-__Explotación:__ Explicación del vector de ataque y ejecución de payloads.
+- __Explotación:__ Explicación del vector de ataque y ejecución de payloads.
 
-__Post-Explotación:__ Escalada de privilegios y persistencia (si aplica).
+- __Post-Explotación:__ Escalada de privilegios y persistencia (si aplica).
 
-__Conceptos Teóricos:__ Breves notas sobre por qué funcionan las vulnerabilidades encontradas.
+- __Conceptos Teóricos:__ Breves notas sobre por qué funcionan las vulnerabilidades encontradas.
 
 ## 📂 Estructura del Repositorio
 El contenido está organizado por plataformas para facilitar la navegación:
